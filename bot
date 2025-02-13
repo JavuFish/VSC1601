@@ -1,0 +1,21 @@
+<?php
+
+$header=array(
+  "accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8",
+  "accept-language: en-US,en;q=0.9,id;q=0.8",
+  "cookie: _ga=GA1.1.1264387025.1733729155; bitmedia_fid=eyJmaWQiOiIwOWNiYmIyZjdmMjBhNTBmNzZkNjBhOGY4OThmNzIzZiIsImZpZG5vdWEiOiJiMmI0ZThlNTBmYzdjNTEwMGI5MzAyZWY0MDdkMDE3ZCJ9; pmvid=0a5b5d0b-2412-42f1-a90d-e9e86462ef1b; kdSspUid=531ad542-5fda-453d-b6f5-27cea62a0cd8; _ym_uid=1739352613631272434; _ym_d=1739352613; ci_session=8cfb8561023ff0faa57e5f3df8a838216cbad92b; clever-last-tracker-84868=10;cf_clearance=w4ybUC8_J8fTg6gxP4k3PQ.C0MgfqlvJHyR8.1ZdzmE-1739435465-1.2.1.1-MWdcmkzs2WfdwVtVJ7P3MCV5wwbEu3YJiJTaAIaL.Io90jrDvrkiYS3LDxqq.7ZTkJUikc8jyWoV_2I6oA5zGr6ozOKmqYi6heEsckdFjgFjV6gxQ7WYDuBaU7ELpeDwLXSx8H.VAoybOYRMqMEYVDybA0LxVMnRq6S_Tvw6S.D4BmBMo6BqBy5Cb_flChNfUGnIb4qakhTwDdg6S6a0l0rhQcV_O5wVfr1ZNBGD1vDiMqNKtEqAqHncri6vS7JUSAkauDjWsmmDy9DEqKwEu5AO.jIPzG3rI_txGqTehBs; _ga_8MW4PHBZKX=GS1.1.1739435463.119.1.1739435597.0.0.0; csrf_cookie_name=4902f91dcc442cfc3980e3a9b933a1f7",
+  "referer: https://onlyfaucet.com/",
+  "user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36"
+);
+
+$ch = curl_init();
+curl_setopt($ch, CURLOP_URL, "https://onlyfaucet.com/");
+curl_setopt($ch, CURLOP_FOLLOWLOCATION, 1);
+curl_setopt($ch, CURLOP_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOP_HTTP_HEADER, $header);
+curl_setopt($ch, CURLOP_SSL_VERIFYPEER, 0);
+$hasil = curl_exec($ch);
+
+$username = explode('');
+
+print_r($hasil);
